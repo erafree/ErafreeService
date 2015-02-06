@@ -24,7 +24,7 @@
 	<div class="pr_head">
 		<img src="template/img/logo.gif"/>
 	</div>
-	<div class="pr_imgsection mainhandler left animated">
+	<div class="pr_imgsection mainhandler left animated" style="display:none;">
 		<img src="template/img/main-bg.jpg"/>
 		<div class="pr_title">
 			<h1>Найдите своё место в мире</h1>
@@ -38,7 +38,7 @@
 			<div class="btn btn--lghtm">У меня есть полезная информация</div>
 		</div>
 	</div>
-	<div class="pr_imgsection contactssection contacthandler right animated">
+	<div class="pr_imgsection contactssection contacthandler right animated" style="display:block;">
 		<img src="template/img/main-contact.jpg"/>
 		<div class="pr_title">
 			<div class="h1">напишите нам</div>
@@ -46,14 +46,7 @@
 		</div>
 		<div class="pr_glasspan">
 			<div class="pr_inputhl">
-			[[FormIt? &hooks=`spam,email` &emailTpl=`quickfeedback`  &emailTo=`support@erafree.com`]]
-			<form action="[[~[[*id]]]]" class="pr_form">
-				<input type="hidden" name="nospam:blank" value="[[+fi.nospam]]" />
-				<div class="innerinput">
-					<textarea name="text" id="text" placeholder="У вас есть полезная информация?&#010;Напишите ее прямо здесь" value="[[+fi.text]]">[[+fi.text]]</textarea>
-					<input type="text"  name="email" id="email" value="[[+fi.email]]" placeholder="Ваш e-mail, мы вышлем вам подарок"/>
-				</div>
-			</form>
+			[[*content]]
 			<div class="pr_grbtn livehandler">Оставить сообщение</div>
 		</div>
 	</div>
