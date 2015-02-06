@@ -1,0 +1,295 @@
+@import url('../fonts/open-sans.css');
+@import url('../fonts/bebasneuebold.css');
+@import url('../fonts/font-awesome.css');
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    -ms-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+  90% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+  position: absolute;
+}
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  100% {
+    opacity: 1;
+    left: 0%;
+  }
+}
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  100% {
+    opacity: 1;
+    left: 0%;
+  }
+}
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    opacity: 1;
+    left: 0%;
+  }
+  100% {
+    opacity: 0%;
+    left: -100%;
+  }
+}
+@keyframes bounceOutLeft {
+  0% {
+    opacity: 1;
+    left: 0%;
+  }
+  100% {
+    opacity: 0;
+    left: -100%;
+  }
+}
+@-webkit-keyframes bounceOutRight {
+  0% {
+    opacity: 1;
+    left: 0%;
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
+@keyframes bounceOutRight {
+  20% {
+    opacity: 1;
+    left: 0%;
+  }
+  100% {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+  position: absolute;
+}
+.bounceOutLeft.right {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+  position: absolute;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 700px;
+}
+h1,
+.h1 {
+  font-size: 71px;
+  font-weight: 800;
+  font-family: 'Bebas Neue';
+  margin: 0;
+}
+h3,
+.h3 {
+  font-size: 24px;
+  margin: 0;
+}
+.pr_head {
+  background-color: #75c44e;
+  height: 80px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 -1px 0 rgba(0, 0, 0, 0.36) inset;
+}
+.pr_head img {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.pr_imgsection {
+  margin-top: -80px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+.pr_imgsection img {
+  width: 100%;
+  margin-top: 80px;
+}
+.pr_imgsection.contacthandler {
+  display: none;
+}
+.pr_imgsection.visible {
+  display: block;
+}
+.pr_glasspan {
+  position: absolute;
+  left: 50%;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+.pr_glasspan {
+  margin-left: -205px;
+  width: 410px;
+  top: 30%;
+  margin-top: 130px;
+}
+.pr_grbtn {
+  background-color: rgba(89, 199, 81, 0.9);
+  box-shadow: 0 5px 27px rgba(0, 0, 0, 0.15);
+  height: 62px;
+  line-height: 62px;
+  text-align: center;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pr_descr {
+  padding: 20px 70px;
+  font-weight: normal;
+  line-height: 21px;
+  font-size: 16px;
+  text-align: center;
+}
+.contactssection .pr_glasspan {
+  margin-left: -312.5px;
+  width: 625px;
+  top: 21%;
+  margin-top: 150px;
+}
+.contactssection .pr_grbtn {
+  position: absolute;
+  width: 70%;
+  left: 50%;
+  margin-left: -35%;
+  bottom: -31px;
+}
+.contactssection .pr_title {
+  top: 21%;
+}
+.pr_inputhl {
+  margin: 45px 10px 60px 10px;
+  background-color: #dddddd;
+}
+.pr_inputhl .innerinput {
+  margin: 0 25px;
+}
+.pr_inputhl .innerinput textarea,
+.pr_inputhl .innerinput input {
+  width: 100%;
+  padding: 25px;
+  margin-left: -25px;
+  border: none;
+  background: transparent;
+  font-family: 'Open Sans';
+  font-size: 14px;
+}
+.pr_inputhl .innerinput textarea:focus,
+.pr_inputhl .innerinput input:focus {
+  outline: none;
+}
+.pr_inputhl .innerinput textarea {
+  height: 140px;
+  resize: none;
+}
+.pr_inputhl .innerinput input {
+  border-top: 1px solid #cecece;
+  height: 1px;
+  line-height: 50px;
+}
+.pr_title {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.pr_title h3 {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  margin-top: 5px;
+}
+.pr_grline {
+  background-color: rgba(37, 35, 40, 0.85);
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.pr_grline .btn {
+  border: 1px solid #7a7a7a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  width: 300px;
+  margin-top: 18px;
+}
+.pr_feedback {
+  background-color: #e7e7e7;
+  min-height: 100px;
+  display: none;
+}
+.btn {
+  cursor: pointer;
+  display: inline-block;
+}
+.btn--lghtm {
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;
+}
+/*# sourceMappingURL=roots/main.min.css.map */

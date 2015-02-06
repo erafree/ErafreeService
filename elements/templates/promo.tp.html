@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<title>[[++site_name]] - [[*pagetitle]]</title>
+<base href="[[++site_url]]" />
+<link rel="stylesheet" href="template/css/style.css" />
+<script type="text/javascript" src="template/js/utils.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/lodash/dist/lodash.min.js"></script>
+<script type="text/javascript" src="template/js/promo.js"></script>
+</head>
+<body>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5QB5WS"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5QB5WS');</script>
+	<!-- End Google Tag Manager -->
+
+
+	<div class="pr_head">
+		<img src="template/img/logo.gif"/>
+	</div>
+	<div class="pr_imgsection mainhandler left animated">
+		<img src="template/img/main-bg.jpg"/>
+		<div class="pr_title">
+			<h1>Найдите своё место в мире</h1>
+			<h3>осуществить перезд, узнать и получить помощь</h3>
+		</div>
+		<div class="pr_glasspan">
+			<div class="pr_grbtn livehandler">Жизнь в другой стране</div>
+			<div class="pr_descr">Я ищу способ переехать в другую страну, открыть бизнес, начать обучение.</div>
+		</div>
+		<div class="pr_grline">
+			<div class="btn btn--lghtm">У меня есть полезная информация</div>
+		</div>
+	</div>
+	<div class="pr_imgsection contactssection contacthandler right animated">
+		<img src="template/img/main-contact.jpg"/>
+		<div class="pr_title">
+			<div class="h1">напишите нам</div>
+			<div class="h3">пока мы готовим качественный контент, <br>задайте нам интересующие вопросы и мы опубликуем ответы</div>
+		</div>
+		<div class="pr_glasspan">
+			<div class="pr_inputhl">
+			[[FormIt? &hooks=`spam,email` &emailTpl=`quickfeedback`  &emailTo=`support@erafree.com`]]
+			<form action="[[~[[*id]]]]" class="pr_form">
+				<input type="hidden" name="nospam:blank" value="[[+fi.nospam]]" />
+				<div class="innerinput">
+					<textarea name="text" id="text" placeholder="У вас есть полезная информация?&#010;Напишите ее прямо здесь" value="[[+fi.text]]">[[+fi.text]]</textarea>
+					<input type="text"  name="email" id="email" value="[[+fi.email]]" placeholder="Ваш e-mail, мы вышлем вам подарок"/>
+				</div>
+			</form>
+			<div class="pr_grbtn livehandler">Оставить сообщение</div>
+		</div>
+	</div>
+	<div class="pr_feedback">
+		О нас говорят
+	"Service seemed to be the only solution for us.
+	Without them, we couldn’t have launched the UK website this way."
+	- Christian Jorge, Vestiaire Collective
+	</div>
+</body>
+</html>
