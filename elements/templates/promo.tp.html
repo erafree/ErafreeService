@@ -46,7 +46,19 @@
 		</div>
 		<div class="pr_glasspan">
 			<div class="pr_inputhl">
-			[[*content]]
+			[[!FormIt? 
+				&hooks=`spam,email` 
+				&emailTpl=`quickfeedback`
+				&emailFrom=`contact@erafree.com`
+				&emailSubject=`Something from site`  
+				&emailTo=`support@erafree.com`]]
+				<form action="[[~[[*id]]]]" class="pr_form">
+					<input type="hidden" name="nospam:blank" value="[[+fi.nospam]]" />
+					<div class="innerinput">
+						<textarea name="text" id="text" placeholder="У вас есть полезная информация?&#010;Напишите ее прямо здесь" value="[[!+fi.text]]"></textarea>
+						<input type="text"  name="email" id="email" value="[[!+fi.email]]" placeholder="Ваш e-mail, мы вышлем вам подарок"/>
+					</div>
+				</form>
 			<div class="pr_grbtn livehandler">Оставить сообщение</div>
 		</div>
 	</div>
