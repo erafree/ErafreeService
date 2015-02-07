@@ -244,6 +244,7 @@ h3,
   top: 0;
   left: 0;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.01);
 }
 .pr_page--back:hover {
   background-color: rgba(0, 0, 0, 0.2);
