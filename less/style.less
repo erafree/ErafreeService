@@ -102,18 +102,30 @@ h3, .h3 {
 	left: 0;
 	top: 50%;
 	margin-top: -90px;
+}
+
+.pr_page--back {
+	width: 191px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 	cursor: pointer;
+
+	&:hover {
+		background-color: rgba(0,0,0,0.2);
+
+		.fr_arrow {
+			-webkit-animation-name: arrowleft;
+		  	animation-name: arrowleft;
+		}
+	}
 
 	.fr_arrow {
 		position: absolute;
 		z-index: 1;
 		left: 10px;
 		top: 5px;
-
-		&:hover {
-		  -webkit-animation-name: arrowleft;
-		  animation-name: arrowleft;
-		}
 	}
 
 	.bg_texture {
@@ -164,10 +176,6 @@ h3, .h3 {
 
 		.addTxt {
 			display: block;
-
-			&:after {
-
-			}
 		}
 
 		.glTxt {
@@ -241,6 +249,9 @@ h3, .h3 {
 
 			&:focus {
 				outline: none;
+				box-shadow:-2px 2px 0 @hdBg inset,2px -2px 0 @hdBg inset;
+				border-radius: 2px;
+				background-color: #fff;
 			}
 		}
 

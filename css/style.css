@@ -236,19 +236,29 @@ h3,
   left: 0;
   top: 50%;
   margin-top: -90px;
+}
+.pr_page--back {
+  width: 191px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   cursor: pointer;
 }
-.pr_back .fr_arrow {
+.pr_page--back:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.pr_page--back:hover .fr_arrow {
+  -webkit-animation-name: arrowleft;
+  animation-name: arrowleft;
+}
+.pr_page--back .fr_arrow {
   position: absolute;
   z-index: 1;
   left: 10px;
   top: 5px;
 }
-.pr_back .fr_arrow:hover {
-  -webkit-animation-name: arrowleft;
-  animation-name: arrowleft;
-}
-.pr_back .bg_texture {
+.pr_page--back .bg_texture {
   position: relative;
   z-index: 0;
 }
@@ -349,6 +359,9 @@ h3,
 .pr_inputhl .innerinput textarea:focus,
 .pr_inputhl .innerinput input:focus {
   outline: none;
+  box-shadow: -2px 2px 0 #75c44e inset, 2px -2px 0 #75c44e inset;
+  border-radius: 2px;
+  background-color: #fff;
 }
 .pr_inputhl .innerinput textarea {
   height: 140px;
