@@ -22,9 +22,11 @@
 
 
 	<div class="pr_head">
-		<img src="template/img/logo.gif"/>
+		<span class="logolink logohandler">
+			<img src="template/img/logo.gif"/>
+		</span>
 	</div>
-	<div class="pr_imgsection mainhandler left animated" style="display:none;">
+	<div class="pr_imgsection mainhandler left animated">
 		<img src="template/img/main-bg.jpg"/>
 		<div class="pr_title">
 			<h1>Найдите своё место в мире</h1>
@@ -35,10 +37,14 @@
 			<div class="pr_descr">Я ищу способ переехать в другую страну, открыть бизнес, начать обучение.</div>
 		</div>
 		<div class="pr_grline">
-			<div class="btn btn--lghtm">У меня есть полезная информация</div>
+			<div class="btn btn--lghtm haveInfo">У меня есть полезная информация</div>
 		</div>
 	</div>
-	<div class="pr_imgsection contactssection contacthandler right animated" style="display:block;">
+	<div class="pr_imgsection contactssection contacthandler right animated">
+		<div class="pr_back">
+			<img class="fr_arrow animated fast" src="template/img/backpromo.png"/>
+			<img class="bg_texture" src="template/img/backpromowind.png"/>
+		</div>
 		<img src="template/img/main-contact.jpg"/>
 		<div class="pr_title">
 			<div class="h1">напишите нам</div>
@@ -46,11 +52,11 @@
 		</div>
 		<div class="pr_glasspan">
 			<div class="pr_inputhl">
-			[[!FormIt? 
-				&hooks=`spam,email` 
+			[[!FormIt?
+				&hooks=`spam,email`
 				&emailTpl=`quickfeedback`
 				&emailFrom=`contact@erafree.com`
-				&emailSubject=`Something from site`  
+				&emailSubject=`Something from site`
 				&emailTo=`support@erafree.com`]]
 				<form action="[[~[[*id]]]]" class="pr_form">
 					<input type="hidden" name="nospam:blank" value="[[+fi.nospam]]" />
@@ -59,7 +65,10 @@
 						<input type="text"  name="email" id="email" value="[[!+fi.email]]" placeholder="Ваш e-mail, мы вышлем вам подарок"/>
 					</div>
 				</form>
-			<div class="pr_grbtn livehandler">Оставить сообщение</div>
+			<div class="pr_grbtn livehandler">
+				<span class="glTxt">Оставить сообщение</span>
+				<span class="addTxt">Отправка<div class="spinner"></div></span>
+			</div>
 		</div>
 	</div>
 	<div class="pr_feedback">

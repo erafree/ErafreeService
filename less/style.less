@@ -1,5 +1,6 @@
 @import url('colors.less');
 @import url('animate.less');
+@import url('loader.less');
 @import url('../fonts/open-sans.css');
 @import url('../fonts/bebasneuebold.css');
 @import url('../fonts/font-awesome.css');
@@ -47,11 +48,30 @@ h3, .h3 {
 	background-color: @hdBg;
 	height: @hdH;
 	box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 -1px 0 rgba(0, 0, 0, .36) inset;
+	position: relative;
+	z-index: 1;
 
-	img {
+	.logolink {
 		position: absolute;
 		left: 20px;
 		top: 20px;
+		cursor: pointer;
+
+		&:hover {
+			&:after {
+				@m: 10px;
+				content: "";
+				display: block;
+				position: absolute;
+				left: -1 * @m;
+				width: 100%;
+				top: -1 * @m;
+				height: 100%;
+				background-color: rgba(0,0,0,0.1);
+				border-radius: @m;
+				padding: @m;
+			}
+		}
 	}
 }
 
@@ -75,6 +95,33 @@ h3, .h3 {
 	}
 }
 
+.pr_back {
+	width: 191px;
+	height: 205px;
+	position: absolute;;
+	left: 0;
+	top: 50%;
+	margin-top: -90px;
+	cursor: pointer;
+
+	.fr_arrow {
+		position: absolute;
+		z-index: 1;
+		left: 10px;
+		top: 5px;
+
+		&:hover {
+		  -webkit-animation-name: arrowleft;
+		  animation-name: arrowleft;
+		}
+	}
+
+	.bg_texture {
+		position: relative;
+		z-index: 0;
+	}
+}
+
 .pr_glasspan {
 	position: absolute;
 	left: 50%;
@@ -95,6 +142,42 @@ h3, .h3 {
 	font-size: 18px;
 	font-weight: 600;
 	cursor: pointer;
+	position: relative;
+
+	.spinner {
+		@size: 20px;
+		width: @size;
+		height: @size;
+		background-color: #fff;
+		position: absolute;
+		top: -80px;
+		right: 38px;
+	}
+
+	.addTxt {
+		display: none;
+	}
+
+	&.disabled {
+		cursor: default;
+		background-color: rgba(246, 179, 34, 0.9);
+
+		.addTxt {
+			display: block;
+
+			&:after {
+
+			}
+		}
+
+		.glTxt {
+			display: none;
+		}
+	}
+
+	&:hover{
+		background-color: rgba(89, 199, 81, 1);
+	}
 }
 
 .pr_pn(@w, @t, @mt) {
@@ -141,6 +224,7 @@ h3, .h3 {
 	.innerinput {
 		@pd: 25px;
 		margin: 0 @pd;
+		font-size: 0;
 
 		textarea, input {
 			width: 100%;
@@ -150,6 +234,10 @@ h3, .h3 {
 			background: transparent;
 			font-family: 'Open Sans';
 			font-size: 14px;
+
+			&.error {
+				background-color: #ffd6d6;
+			}
 
 			&:focus {
 				outline: none;
