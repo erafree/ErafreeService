@@ -1,19 +1,27 @@
-@import url('colors.less');
-@import url('animate.less');
-@import url('loader.less');
-@import url('../fonts/open-sans.css');
-@import url('../fonts/bebasneuebold.css');
-@import url('../fonts/font-awesome.css');
+@import url('../../fonts/open-sans.css');
+@import url('../../fonts/bebasneuebold.css');
+@import url('../../fonts/font-awesome.css');
+
+@import 'colors';
+@import 'animate';
+@import 'loader';
 
 
 
-@hdH: 80px;
-@btnH: 62px;
-@brR: 40px;
-@topP: 30%;
-@pnW: 410px;
+$hdH: 80px;
+$btnH: 62px;
+$brR: 40px;
+$topP: 30%;
+$pnW: 410px;
 
-@grayTr: rgba(37, 35, 40, 0.85);
+@mixin pr_pn($w, $t, $mt) {
+	.pr_glasspan {
+		margin-left: -1 * ($w / 2);
+		width: $w;
+		top: $t;
+		margin-top: $mt;
+	}
+}
 
 html, body {
 	height: 100%;
@@ -45,8 +53,8 @@ h3, .h3 {
 }
 
 .pr_head {
-	background-color: @hdBg;
-	height: @hdH;
+	background-color: $hdBg;
+	height: $hdH;
 	box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 -1px 0 rgba(0, 0, 0, .36) inset;
 	position: relative;
 	z-index: 1;
@@ -59,17 +67,17 @@ h3, .h3 {
 
 		&:hover {
 			&:after {
-				@m: 10px;
+				$m: 10px;
 				content: "";
 				display: block;
 				position: absolute;
-				left: -1 * @m;
+				left: -1 * $m;
 				width: 100%;
-				top: -1 * @m;
+				top: -1 * $m;
 				height: 100%;
 				background-color: rgba(0,0,0,0.1);
-				border-radius: @m;
-				padding: @m;
+				border-radius: $m;
+				padding: $m;
 			}
 		}
 	}
@@ -79,10 +87,10 @@ h3, .h3 {
 
 	img {
 		width: 100%;
-		margin-top: @hdH;
+		margin-top: $hdH;
 	}
 
-	margin-top: -1 * @hdH;
+	margin-top: -1 * $hdH;
 	overflow: hidden;
 	position: relative;
 	height: 100%;
@@ -138,29 +146,29 @@ h3, .h3 {
 .pr_glasspan {
 	position: absolute;
 	left: 50%;
-	border-radius: @brR;
+	border-radius: $brR;
 	background-color: rgba(255, 255, 255, 0.18);
 	color: #fff;
 }
 
-.pr_pn(@pnW,@topP, 130px);
+ @include pr_pn($pnW,$topP, 130px);
 
 .pr_grbtn {
 	background-color: rgba(89, 199, 81, 0.9);
 	box-shadow: 0 5px 27px rgba(0, 0, 0, 0.15);
-	height: @btnH;
-	line-height: @btnH;
+	height: $btnH;
+	line-height: $btnH;
 	text-align: center;
-	border-radius: @brR;
+	border-radius: $brR;
 	font-size: 18px;
 	font-weight: 600;
 	cursor: pointer;
 	position: relative;
 
 	.spinner {
-		@size: 20px;
-		width: @size;
-		height: @size;
+		$size: 20px;
+		width: $size;
+		height: $size;
 		background-color: #fff;
 		position: absolute;
 		top: -80px;
@@ -189,15 +197,6 @@ h3, .h3 {
 	}
 }
 
-.pr_pn(@w, @t, @mt) {
-	.pr_glasspan {
-		margin-left: -1 * (@w / 2);
-		width: @w;
-		top: @t;
-		margin-top: @mt;
-	}
-}
-
 
 .pr_descr {
 	padding:20px 70px;
@@ -208,21 +207,21 @@ h3, .h3 {
 }
 
 .contactssection {
-	@pnW: 625px;
-	@t: @topP - 9;
+	$pnW: 625px;
+	$t: $topP - 9;
 
-	.pr_pn(@pnW, @t, 150px);
+	 @include pr_pn($pnW, $t, 150px);
 
 	.pr_grbtn {
 		position: absolute;
 		width: 70%;
 		left: 50%;
 		margin-left: -35%;
-		bottom: -1 * (@btnH / 2);
+		bottom: -1 * ($btnH / 2);
 	}
 
 	.pr_title {
-		top: @t;
+		top: $t;
 	}
 }
 
@@ -231,14 +230,14 @@ h3, .h3 {
 	background-color: #dddddd;
 
 	.innerinput {
-		@pd: 25px;
-		margin: 0 @pd;
+		$pd: 25px;
+		margin: 0 $pd;
 		font-size: 0;
 
 		textarea, input {
 			width: 100%;
-			padding: @pd;
-			margin-left: -1 * @pd;
+			padding: $pd;
+			margin-left: -1 * $pd;
 			border:none;
 			background: transparent;
 			font-family: 'Open Sans';
@@ -250,7 +249,7 @@ h3, .h3 {
 
 			&:focus {
 				outline: none;
-				box-shadow:-2px 2px 0 @hdBg inset,2px -2px 0 @hdBg inset;
+				box-shadow:-2px 2px 0 $hdBg inset,2px -2px 0 $hdBg inset;
 				border-radius: 2px;
 				background-color: #fff;
 			}
@@ -271,7 +270,7 @@ h3, .h3 {
 
 .pr_title {
 	position: absolute;
-	top: @topP;
+	top: $topP;
 	left: 0;
 	width: 100%;
 	text-align: center;
@@ -285,8 +284,8 @@ h3, .h3 {
 }
 
 .pr_grline {
-	background-color: @grayTr;
-	height: @hdH;
+	background-color: $grayTr;
+	height: $hdH;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -315,8 +314,8 @@ h3, .h3 {
 }
 
 .btn--lghtm {
-	@h: 45px;
+	$h: 45px;
 	border-radius: 3px;
-	height: @h;
-	line-height: @h;
+	height: $h;
+	line-height: $h;
 }
